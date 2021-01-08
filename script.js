@@ -50,39 +50,42 @@ function imprimirError(mensaje) {
 // TERMINA EL BOILERPLATE
 
 // COMIENZA ACA
-//function hacerOperacion() {
-//  if (operacion == 'sumar'){
-//    resultado = (input1 + input2).value;
-//  }else if (operacion == 'restar'){
-//    resultado = (input1 - input2).value;
-//  }else if (operacion == 'multiplicar'){
-//    resultado = (input1 * input2).value;
-//  }else if (operacion == 'dividir'){
-//    resultado = (input1 / input2).value;
-//  }
-//console.log(resultado).value;}
 
-document.querySelector("button").addEventListener("click", () =>{
-  const input1 = parseInt(document.querySelector("#input1").value);
-  const input2 = parseInt(document.querySelector("#input2").value);
-  const operacion = document.querySelector("#operacion").value;
+function hacerOperacion() {
+  input1.value = '';
+  input2.value = '';
+  operacion.value = '';
+  error.innerText = '';
+  resultado.innerText = '';
 
-  const resultado = document.querySelector("#resultado");
-  resultado.innerText = `El resultado de tu operación es ${resultado}`;
+  const input1 = parseInt(input1.value);
+  const input2 = parseInt(input2.value);
+}
 
-  const error = document.querySelector("#error");
-  error.innerText = mensaje;
-  if (operacion == 'sumar'){
-      resultado = (input1 + input2).value;
-    }else if (operacion == 'restar'){
-      resultado = (input1 - input2).value;
-    }else if (operacion == 'multiplicar'){
-      resultado = (input1 * input2).value;
-    }else if (operacion == 'dividir'){
-      resultado = (input1 / input2).value;
-    }
-    console.log(resultado);
-});
+//suma
 
+function suma(input1,input2) {
+  const resultado = input1 + input2;
+  imprimirResultado(resultado);
+}
 
+//resta
 
+function resta(input1,input2) {
+  const resultado = input1 - input2;
+  imprimirResultado(resultado);
+}
+
+//multiplica
+
+function multiplicacion(input1,input2) {
+  const resultado = input1 * input2;
+  imprimirResultado(resultado);
+}
+
+//divide
+
+function division(input1,input2) {
+  const resultado = input1 / input2;
+  imprimirResultado(resultado);
+}
