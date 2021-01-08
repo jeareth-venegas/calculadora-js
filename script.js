@@ -51,16 +51,7 @@ function imprimirError(mensaje) {
 
 // COMIENZA ACA
 
-function hacerOperacion() {
-  input1.value = '';
-  input2.value = '';
-  operacion.value = '';
-  error.innerText = '';
-  resultado.innerText = '';
 
-  const input1 = parseInt(input1.value);
-  const input2 = parseInt(input2.value);
-}
 
 //suma
 
@@ -89,3 +80,28 @@ function division(input1,input2) {
   const resultado = input1 / input2;
   imprimirResultado(resultado);
 }
+
+function hacerOperacion() {
+  input1.value = '';
+  input2.value = '';
+  operacion.value = '';
+  error.innerText = '';
+  resultado.innerText = '';
+
+  const input1 = parseInt(input1.value);
+  const input2 = parseInt(input2.value);
+
+
+  if (operacion == 'sumar'){
+    resultado = (input1 + input2).value;
+  }else if (operacion == 'restar'){
+    resultado = (input1 - input2).value;
+  }else if (operacion == 'multiplicar'){
+    resultado = (input1 * input2).value;
+  }else if (operacion == 'dividir'){
+    resultado = (input1 / input2).value;
+  }
+
+}
+
+
