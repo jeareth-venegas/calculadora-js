@@ -51,50 +51,38 @@ function imprimirError(mensaje) {
 
 // COMIENZA ACA
 
-
-
 //suma
  //cambio variables a num 1 y num 2 para entender mejor
 function suma(num1,num2) {
-  const resultado = num1 + num2;
-  imprimirResultado(resultado);
+  return num1 + num2;
 }
 
 //resta
 
 function resta(num1,num2) {
-  const resultado = num1 - num2;
-  imprimirResultado(resultado);
+  return num1 - num2;
 }
 
 //multiplica
 
 function multiplicacion(num1,num2) {
-  const resultado = num1 * num2;
-  imprimirResultado(resultado);
+  return num1 * num2;
 }
 
 //divide
 
 function division(num1,num2) {
-  const resultado = num1 / num2;
-  imprimirResultado(resultado);
+  return num1 / num2;
 }
 
 function hacerOperacion() {
-  input1.value = '';
-  input2.value = '';
-  operacion.value = '';
+  const num1 = parseInt(input1.value, 10);
+  const num2 = parseInt(input2.value, 10);
+  
   error.innerText = '';
   resultado.innerText = '';
 
-  const num1 = parseInt(input1.value);
-  const num2 = parseInt(input2.value);
-
-  if (input1.value == '' || operacion.value == ' ' || input2.value == ''){
-    imprimirError('No ha insertado ningun numero o asignado una operacion')
-  }else{
-    if (operacion.value == 'sumar'){
+  if(operacion.value == 'sumar'){
       imprimirResultado(suma(num1 , num2))
     }else if (operacion.value == 'restar'){
       imprimirResultado(resta(num1 , num2))
@@ -102,8 +90,10 @@ function hacerOperacion() {
       imprimirResultado(multiplicacion(num1 , num2))
     }else if (operacion.value == 'dividir'){
       imprimirResultado(division(num1 , num2))
-    }
-  }
+    }else{(input1.value == '' || operacion.value == '' || input2.value == '')
+      imprimirError('No ha insertado ningun numero o asignado una operacion')}
+
+  input1.value = '';
+  input2.value = '';
+  operacion.value = '';
 }
-
-
